@@ -1,24 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import "./App.css";
+
+import Header from "./components/Header/header";
+import About from "./components/About/about";
+import Startup from "./components/startup/startup";
+import SignUp from "./components/SignUp/signup";
+import Footer from "./components/Footer/footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div>
+          <Header />
+        </div>
+        <div style={{ display: "block" }}>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return <>{/* <Home /> */}</>;
+              }}
+            ></Route>
+            <Route
+              exact
+              path="/about"
+              render={() => {
+                return (
+                  <>
+                    <About />
+                    <Footer />
+                  </>
+                );
+              }}
+            ></Route>
+            <Route
+              exact
+              path="/ideas"
+              render={() => {
+                return (
+                  <>
+                    <Startup />
+                  </>
+                );
+              }}
+            ></Route>
+            <Route
+              exact
+              path="/register"
+              render={() => {
+                return (
+                  <>
+                    <SignUp />
+                  </>
+                );
+              }}
+            ></Route>
+          </Switch>
+        </div>
+      </Router>
+    </>
   );
 }
 
