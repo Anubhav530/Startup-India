@@ -6,6 +6,8 @@ import About from "./components/About/about";
 import Startup from "./components/startup/startup";
 import SignUp from "./components/SignUp/signup";
 import Footer from "./components/Footer/footer";
+import Home from "./components/Home/Home.jsx";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -21,7 +23,10 @@ function App() {
               exact
               path="/"
               render={() => {
-                return <>{/* <Home /> */}</>;
+                return <>
+                  <Home />
+                  
+                </>
               }}
             ></Route>
             <Route

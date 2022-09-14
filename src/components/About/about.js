@@ -6,6 +6,7 @@ class About extends Component {
         return (
             <div className='container'>
                 <p className='text-primary'>This is about section</p>
+               
             </div>
         );
     }
