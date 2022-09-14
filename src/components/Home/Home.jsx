@@ -13,14 +13,7 @@ class Home extends Component {
     data: []
   }
 
-  options = {
-    method: 'GET',
-    url: 'https://tech-news3.p.rapidapi.com/venturebeat',
-    headers: {
-      'X-RapidAPI-Key': '51f333c930msh5494e60c5e55ac9p1456bbjsnac2eb0e26da0',
-      'X-RapidAPI-Host': 'tech-news3.p.rapidapi.com'
-    }
-  }
+  
   options = {
     method: 'GET',
     url: 'https://countries-states-cities-dataset.p.rapidapi.com/list-countries',
@@ -46,7 +39,7 @@ class Home extends Component {
         data : response.data
       })
     }).catch(function (error) {
-      console.error(errorJson);
+      console.log(errorJson);
       this.setState({
         data : errorJson
       })
