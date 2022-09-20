@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Post = ({ current }) => {
 
-    const [userName, setUserName] = useState('https://randomuser.me/api/')
+    const [userName, setUserName] = useState('NAman')
     const [userImgLink, setuserImgLink] = useState(`https://randomuser.me/api/portraits/men/${current}.jpg`)
     const [loginUserName, setLoginUserName] = useState('username')
     const [postImgLink, setPostImgLink] = useState('https://pub-cdn.apitemplate.io/2022/09/dbe18a5f-d5a8-4716-807e-55b949897488.jpeg')
@@ -21,19 +21,18 @@ const Post = ({ current }) => {
     };
 
     useEffect(() => {
-        return () => {
-            console.log(`making call in Post.js for ${current} index`)
-            axios.request(options).then(function (response) {
-                setUserName(response.data.results[0].name.first + ' ' + response.data.results[0].name.last)
-                console.log(userName);
-                setuserImgLink(response.data.results[0].picture.thumbnail)
-                console.log(userImgLink);
-                setLoginUserName(response.data.results[0].login.username)
-                console.log(loginUserName);
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
+        // alert(`Post ${current} Section is Created`)
+        console.log(`making call in Post.js for ${current} index`)
+        axios.request(options).then(function (response) {
+            setUserName(response.data.results[0].name.first + ' ' + response.data.results[0].name.last)
+            // console.log(userName);
+            setuserImgLink(response.data.results[0].picture.thumbnail)
+            // console.log(userImgLink);
+            setLoginUserName(response.data.results[0].login.username)
+            // console.log(loginUserName);
+        }).catch(function (error) {
+            console.error(error);
+        });
     }, [])
 
     return (

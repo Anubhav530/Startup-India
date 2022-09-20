@@ -12,16 +12,16 @@ const Profile = ({userName}) => {
     };
 
     useEffect(() => {
-        return () => {
-            console.log(`making call in PRofile.js for index`)
+            alert('Profile Section is Created')
+            // console.log(`making call in PRofile.js for index`)
             axios.request(options).then(function (response) {
-                console.log(response.data);
+                console.log('News Section' ,response.data);
                 setImgURL(response.data.results[0].picture.large)
-                console.log(imgURL)
+                // console.log(imgURL)
             }).catch(function (error) {
                 console.error(error);
             });
-        }
+        
     }, [])
 
     return (

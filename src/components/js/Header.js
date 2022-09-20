@@ -1,6 +1,6 @@
 import '../css/Header.css'
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -24,27 +24,27 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 navList">
                             <li className="nav-item navListItems">
-                                <Link className="nav-link text-white glow-on-hover" to="/">
+                                <Link className="nav-link text-white  " to="/">
                                     Home
                                 </Link>
                             </li>
                             <li className="nav-item navListItems">
-                                <Link className="nav-link text-white" to="/news">
+                                <Link className="nav-link text-white  " to="/news">
                                     News
                                 </Link>
                             </li>
                             <li className="nav-item navListItems">
-                                <Link className="nav-link text-white" to="/new-post">
+                                <Link className="nav-link text-white " to="/new-post">
                                     New Post
                                 </Link>
                             </li>
                             <li className="nav-item navListItems">
-                                <Link className="nav-link text-white" to="/activity">
+                                <Link className="nav-link text-white " to="/activity">
                                     Activity
                                 </Link>
                             </li>
                             <li className="nav-item navListItems">
-                                <Link className="nav-link text-white" to="/profile">
+                                <Link className="nav-link text-white " to="/profile">
                                     Profile
                                 </Link>
                             </li>

@@ -12,7 +12,7 @@
 }
 
 .postContainer:hover {
-    transform: translateY(-0.5rem);
+    /* transform: translateY(-0.5rem); */
     box-shadow: 5px 5px 18px rgba(90, 5, 5, 0.4)
 }
 

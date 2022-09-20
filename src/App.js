@@ -45,7 +45,7 @@ class App extends Component {
                             render={() => {
                                 return (
                                     <>
-                                        <PostSection blur={true}/>
+                                        {/* <PostSection blur={true}/> */}
                                         <NewPost/>
                                     </>
                                 )
