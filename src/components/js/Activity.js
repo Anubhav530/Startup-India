@@ -6,27 +6,29 @@ import { useEffect } from 'react'
 const Activity = () => {
 
     useEffect(() => {
-        alert(`Activity Section is Created`)
+        console.log(`Activity Section is Created`)
     }, [])
-    
 
-    const users = [0 ,1 ,2 ,3 ,4 ,5 ,6 ,7 , 8 , 9 ,10]
+    const users = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-  return (
-    <div className='activityContainer'>
-        <ul>
-            {
-                users.map((val ,index)=>
-                    <User val={val} key={index}/>
-                )
-            }
-            
-        </ul>
-        
-        <input type="text" placeholder='type message'/>
+    return (
+        <div className='activityContainer'>
 
-    </div>
-  )
+            {/* <div className='messageSection'>
+                <input type="text" placeholder='type message' />
+            </div> */}
+            <section className='listSection'>
+                <ul className='listSection'>
+                {
+                    users.map((val, index) =>
+                        <User val={val} key={index} />
+                    )
+                }
+                </ul>
+            </section>
+            <section className='messageSection'>messageSection</section>
+        </div>
+    )
 }
 
 export default Activity

@@ -5,9 +5,10 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Post = ({ current }) => {
+const Post = ({ current ,clickedHandler }) => {
 
-    const [userName, setUserName] = useState('NAman')
+    const [userData ,setUserData] = useState({})
+    const [userName, setUserName] = useState('')
     const [userImgLink, setuserImgLink] = useState(`https://randomuser.me/api/portraits/men/${current}.jpg`)
     const [loginUserName, setLoginUserName] = useState('username')
     const [postImgLink, setPostImgLink] = useState('https://pub-cdn.apitemplate.io/2022/09/dbe18a5f-d5a8-4716-807e-55b949897488.jpeg')
@@ -30,6 +31,7 @@ const Post = ({ current }) => {
             // console.log(userImgLink);
             setLoginUserName(response.data.results[0].login.username)
             // console.log(loginUserName);
+            setUserData(response.data.results[0])
         }).catch(function (error) {
             console.error(error);
         });
@@ -45,8 +47,8 @@ const Post = ({ current }) => {
                 </div>
                 {/* <h4>{userName}</h4> */}
 
-                <h4 className="userName">
-                    <Link to="/profile" username={userName}>
+                <h4 className="userName" onClick={()=>{clickedHandler(userData)}}>
+                    <Link to="/profile" >
                         {loginUserName}
                     </Link>
                 </h4>

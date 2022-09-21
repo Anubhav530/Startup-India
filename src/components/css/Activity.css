@@ -1,11 +1,21 @@
-.activityContainer{
-    
-    margin-top: 60px;
-    position: relative;
-    /* border: 0.2px solid black; */
-    margin: 60px 24.3vw;
-    width: 50vw;
+.activityContainer {
+    display :flex;
+    flex-direction: row;
+    width : 100vw;
+    margin : 70px 0;
+}
+
+.listSection {
     display: flex;
-    justify-content: space-evenly;
-    /* border-radius: 2%; */
+    width : 20vw;
+    border : 2px solid green;
+    flex-direction: column;
+
+}
+
+
+.messageSection{
+    display: flex;
+    width : 80vw;
+    border : 2px solid blue;
 }

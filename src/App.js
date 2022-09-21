@@ -8,76 +8,77 @@ import './App.css'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Activity from './components/js/Activity'
+import { useState } from 'react'
+const App = () => {
+    const [clickedUserData ,setClickedUserData] = useState({})
+    
+    return (
+        <div className='parentContainer'>
+            <Router>
+                <Header />
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        render={() => {
+                            return (
+                                <>
+                                    <PostSection setClickedUserData={(e) => { setClickedUserData(e) }} />
+                                </>
+                            )
+                        }}>
+                    </Route>
+                    <Route
+                        exact
+                        path="/news"
+                        render={() => {
+                            return (
+                                <>
+                                    <News />
+                                </>
+                            )
+                        }}>
+                    </Route>
 
-class App extends Component {
-    render() {
-        return (
-            <div className='parentContainer'>
-                <Router>
-                    <Header />
-                    <Switch>
-                        <Route
-                            exact
-                            path="/"
-                            render={() => {
-                                return (
-                                    <>
-                                        <PostSection blur={false}/>
-                                    </>
-                                )
-                            }}>
-                        </Route>
-                        <Route
-                            exact
-                            path="/news"
-                            render={() => {
-                                return (
-                                    <>
-                                        <News />
-                                    </>
-                                )
-                            }}>
-                        </Route>
-
-                        <Route
-                            exact
-                            path="/new-post"
-                            render={() => {
-                                return (
-                                    <>
-                                        {/* <PostSection blur={true}/> */}
-                                        <NewPost/>
-                                    </>
-                                )
-                            }}
-                        ></Route>
-                        <Route
-                            exact
-                            path="/activity"
-                            render={() => {
-                                return (
-                                    <>
-                                        <Activity/>
-                                    </>
-                                )
-                            }}
-                        ></Route>
-                        <Route
-                            exact
-                            path="/profile"
-                            render={() => {
-                                return (
-                                    <>
-                                        <Profile/>
-                                    </>
-                                )
-                            }}
-                        ></Route>
-                    </Switch>
-                </Router>
-            </div>
-        )
-    }
+                    <Route
+                        exact
+                        path="/new-post"
+                        render={() => {
+                            return (
+                                <>
+                                    {/* <PostSection blur={true}/> */}
+                                    <NewPost />
+                                </>
+                            )
+                        }}
+                    ></Route>
+                    <Route
+                        exact
+                        path="/activity"
+                        render={() => {
+                            return (
+                                <>
+                                    <Activity />
+                                </>
+                            )
+                        }}
+                    ></Route>
+                    <Route
+                        exact
+                        path="/profile"
+                        render={() => {
+                            return (
+                                <>
+                                    <Profile clickedUserData={clickedUserData} />
+                                </>
+                            )
+                        }}
+                    ></Route>
+                </Switch>
+            </Router>
+        </div>
+    )
 }
+
 
 export default App

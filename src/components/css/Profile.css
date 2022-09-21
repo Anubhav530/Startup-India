@@ -1,18 +1,21 @@
-.profileContainer{
-    margin-top: 60px;
+.profileContainer {
+    margin-top: 33px;
     position: relative;
     /* border: 0.2px solid black; */
-    margin: 60px 24.3vw;
+    margin: 95px 24.3vw;
     width: 50vw;
     display: flex;
     justify-content: space-evenly;
-    /* border-radius: 2%; */
+
 }
 
 
-.userImg{
-    height : 200px;
-    width : 200px;
-    border : 0.5px solid blue;
+.userImg {
+    height: 200px;
+    width: 200px;
+    border: 0.5px solid blue;
     border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
