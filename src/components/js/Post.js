@@ -24,7 +24,6 @@ const Post = ({ current, clickedHandler }) => {
     };
 
     useEffect(() => {
-        console.log(`making call in Post.js for ${current} index`);
         axios
             .request(options)
             .then(function (response) {
