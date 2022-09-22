@@ -14,7 +14,7 @@ const News = () => {
     };
 
     useEffect(() => {
-        alert('News Section Created')
+        // alert('News Section Created')
         console.log('News Section useEffect Called')
         axios.request(options).then(function (response) {
             console.log("News Section : ", response.data);

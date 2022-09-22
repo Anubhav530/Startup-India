@@ -46,13 +46,13 @@ const Profile = ({ clicked, clickedUserData }) => {
                             <h3> {locationInfo.city} , {locationInfo.country}</h3>
                         </div>
 
-                        <div className="userImg" style={{}}>
+                        {/* <div className="userImg" style={{}}>
                             {console.log('clickedUserData - ' ,clickedUserData)}
                         </div>
-                        <div className="userInfo">
+                        <div className="userInfo"> */}
                             {/* <h2 >username : {clickedUserData.location.username}</h2> */}
                             {/* <h3> {locationInfo.city} , {clickedUserData.location.country}</h3> */}
-                        </div>
+                        {/* </div> */}
 
 
                     </>

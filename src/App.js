@@ -46,7 +46,7 @@ const App = () => {
                         render={() => {
                             return (
                                 <>
-                                    {/* <PostSection blur={true}/> */}
+                                    <PostSection/>
                                     <NewPost />
                                 </>
                             )
