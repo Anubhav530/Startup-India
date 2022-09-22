@@ -13,7 +13,7 @@ const App = () => {
     const [clickedUserData ,setClickedUserData] = useState({})
     
     return (
-        <div className='parentContainer'>
+        <>
             <Router>
                 <Header />
                 <Switch>
@@ -65,7 +65,7 @@ const App = () => {
                     ></Route>
                     <Route
                         exact
-                        path="/profile"
+                        path="/profile/:id"
                         render={() => {
                             return (
                                 <>
@@ -76,7 +76,7 @@ const App = () => {
                     ></Route>
                 </Switch>
             </Router>
-        </div>
+        </>
     )
 }
 

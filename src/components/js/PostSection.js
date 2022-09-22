@@ -2,12 +2,13 @@ import { useState } from "react"
 import { useEffect } from "react"
 import Post from "./Post"
 import "./../css/PostSection.css"
-import axios from "axios"
+import axios from "axios";
+import Loader from "./loader";
 
 const PostSection = (props) => {
     const [posts, setPosts] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     const [obj, setObj] = useState([])
-    const [loader ,setLoader] = useState(true)
+    const [spinner ,setSpinner] = useState(true)
     const [clickedUserData ,setClickedUserData] = useState({})
 
     const options1 = {
@@ -21,7 +22,7 @@ const PostSection = (props) => {
         axios.request(options1).then(function (respone) {
             console.log(respone.data)
             setObj(respone.data)
-            setLoader(false)
+            setSpinner(false)
         }).catch(function (err) {
             console.log(err)
         })
@@ -29,15 +30,15 @@ const PostSection = (props) => {
     }, [])
 
     return (
-        <div className="postSection" >
+        <div className="container" >
 
             {
-                (loader)
+                (spinner)
                     ?
-                    <div>Loading.....</div>
+                    <Loader />
                     :
                     <>
-                        <ul style={{ listStyleType: "none" }}>
+                        <div className="row">
                             {
                                 posts.map((post, index) => {
                                     return(
@@ -51,7 +52,7 @@ const PostSection = (props) => {
                                 }
                                 )
                             }
-                        </ul>
+                        </div>
                     </>
             }
 
